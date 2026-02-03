@@ -1,0 +1,23 @@
+{
+  "name": "pet-to-you",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel run dev",
+    "dev:hospital": "pnpm --filter hospital-dashboard dev",
+    "dev:admin": "pnpm --filter admin-dashboard dev",
+    "build": "pnpm --recursive run build",
+    "lint": "pnpm --recursive run lint",
+    "clean": "pnpm --recursive exec rm -rf .next node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
