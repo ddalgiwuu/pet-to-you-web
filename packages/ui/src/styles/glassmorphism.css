@@ -1,0 +1,163 @@
+/**
+ * Glassmorphism Utilities
+ *
+ * Frosted-glass effect using transparency, blurring, and subtle layering
+ * Based on Apple's Liquid Glass design system
+ *
+ * Best Practices:
+ * - Place glass elements over vivid gradients or layered illustrations
+ * - Ensure sufficient contrast for text readability (WCAG AA minimum)
+ * - Optimize blur effects for less powerful devices
+ * - Test accessibility with transparency
+ */
+
+/* Base glass effect */
+.glass {
+  background: var(--glass-bg, oklch(from white l c h / 0.1));
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--glass-border, oklch(from white l c h / 0.2));
+  box-shadow: 0 8px 32px var(--glass-shadow, oklch(0 0 0 / 0.1));
+}
+
+/* Glass card with hover effect */
+.glass-card {
+  @apply glass rounded-2xl p-6;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  box-shadow: 0 12px 48px var(--glass-shadow, oklch(0 0 0 / 0.1));
+  transform: translateY(-2px);
+}
+
+/* Glass with gradient overlay */
+.glass-gradient {
+  @apply glass;
+  position: relative;
+}
+
+.glass-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    oklch(from white l c h / 0.1),
+    oklch(from black l c h / 0.05)
+  );
+  pointer-events: none;
+}
+
+/* Glass sidebar */
+.glass-sidebar {
+  @apply glass;
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+}
+
+/* Glass header */
+.glass-header {
+  @apply glass;
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  border-bottom: 1px solid var(--glass-border, oklch(from white l c h / 0.2));
+}
+
+/* Glass modal/dialog */
+.glass-modal {
+  @apply glass rounded-3xl;
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+}
+
+/* Glass panel (subtle) */
+.glass-panel {
+  background: var(--glass-bg, oklch(from white l c h / 0.05));
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  border: 1px solid var(--glass-border, oklch(from white l c h / 0.15));
+  border-radius: 1rem;
+}
+
+/* Glass button */
+.glass-button {
+  @apply glass rounded-xl px-4 py-2;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  backdrop-filter: blur(14px) saturate(200%);
+  -webkit-backdrop-filter: blur(14px) saturate(200%);
+  transform: translateY(-1px);
+}
+
+.glass-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive optimizations */
+@media (max-width: 768px) {
+  .glass,
+  .glass-card,
+  .glass-panel,
+  .glass-button {
+    backdrop-filter: blur(8px) saturate(150%);
+    -webkit-backdrop-filter: blur(8px) saturate(150%);
+  }
+
+  .glass-sidebar {
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+
+  .glass-modal {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .glass,
+  .glass-card,
+  .glass-sidebar,
+  .glass-header,
+  .glass-modal,
+  .glass-panel,
+  .glass-button {
+    background: var(--glass-bg, oklch(from black l c h / 0.3));
+    border-color: var(--glass-border, oklch(from white l c h / 0.1));
+    box-shadow: 0 8px 32px var(--glass-shadow, oklch(0 0 0 / 0.3));
+  }
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass,
+  .glass-card,
+  .glass-sidebar,
+  .glass-header,
+  .glass-modal,
+  .glass-panel,
+  .glass-button {
+    background: oklch(0.98 0.02 250 / 0.95);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .glass,
+    .glass-card,
+    .glass-sidebar,
+    .glass-header,
+    .glass-modal,
+    .glass-panel,
+    .glass-button {
+      background: oklch(0.15 0.02 250 / 0.95);
+    }
+  }
+}
