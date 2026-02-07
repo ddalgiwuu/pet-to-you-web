@@ -3,6 +3,13 @@
 import { Bell, Search } from "lucide-react"
 import { Input } from "@pet-to-you/ui"
 
+// TODO: Replace with actual user/hospital data from auth session
+const mockHospitalData = {
+  name: "서울동물병원",
+  email: "admin@hospital.com",
+  initial: "서"
+}
+
 export function Header() {
   return (
     <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
@@ -27,11 +34,11 @@ export function Header() {
 
         <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
           <div className="text-right">
-            <p className="text-sm font-medium text-gray-900">서울동물병원</p>
-            <p className="text-xs text-gray-500">admin@hospital.com</p>
+            <p className="text-sm font-medium text-gray-900">{mockHospitalData.name}</p>
+            <p className="text-xs text-gray-500">{mockHospitalData.email}</p>
           </div>
           <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-semibold">
-            서
+            {mockHospitalData.initial}
           </div>
         </div>
       </div>

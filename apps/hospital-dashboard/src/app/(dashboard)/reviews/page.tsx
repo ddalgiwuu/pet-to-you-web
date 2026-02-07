@@ -2,10 +2,18 @@
 
 import { Card, CardHeader, CardTitle, CardContent, Button, Badge } from "@pet-to-you/ui"
 import { Star, MessageSquare } from "lucide-react"
-import { mockReviews } from "@/lib/mock-data"
+import { useReviews } from "@/hooks/useReviews"
 import { motion } from "framer-motion"
 
 export default function ReviewsPage() {
+  const { data, isLoading, error } = useReviews()
+
+  const reviews = data?.reviews || []
+  const averageRating = data?.averageRating || 0
+  const totalReviews = data?.total || 0
+
+  // Count reviews needing reply
+  const needsReply = reviews.filter(r => !r.reply).length
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -15,46 +23,69 @@ export default function ReviewsPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900">4.8</div>
-              <div className="flex items-center justify-center gap-1 mt-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="text-sm text-gray-500 mt-2">총 128개의 리뷰</p>
-            </div>
-          </CardContent>
-        </Card>
+      {isLoading ? (
+        <div className="flex items-center justify-center h-64">
+          <div className="text-gray-500">로딩 중...</div>
+        </div>
+      ) : error ? (
+        <div className="flex items-center justify-center h-64">
+          <div className="text-red-600">데이터를 불러올 수 없습니다</div>
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <Card>
+              <CardContent className="pt-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-gray-900">{averageRating.toFixed(1)}</div>
+                  <div className="flex items-center justify-center gap-1 mt-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`h-5 w-5 ${
+                          i < Math.floor(averageRating)
+                            ? 'fill-yellow-400 text-yellow-400'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-sm text-gray-500 mt-2">총 {totalReviews}개의 리뷰</p>
+                </div>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600">98%</div>
-              <p className="text-sm text-gray-500 mt-2">긍정적인 리뷰</p>
-              <Badge variant="success" className="mt-2">우수</Badge>
-            </div>
-          </CardContent>
-        </Card>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-600">
+                    {totalReviews > 0 ? Math.round((reviews.filter(r => r.rating >= 4).length / totalReviews) * 100) : 0}%
+                  </div>
+                  <p className="text-sm text-gray-500 mt-2">긍정적인 리뷰</p>
+                  <Badge variant={averageRating >= 4.5 ? "success" : "default"} className="mt-2">
+                    {averageRating >= 4.5 ? "우수" : "양호"}
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600">5</div>
-              <p className="text-sm text-gray-500 mt-2">답변 대기중</p>
-              <Button variant="outline" size="sm" className="mt-2">
-                답변하기
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+            <Card>
+              <CardContent className="pt-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-orange-600">{needsReply}</div>
+                  <p className="text-sm text-gray-500 mt-2">답변 대기중</p>
+                  {needsReply > 0 && (
+                    <Button variant="outline" size="sm" className="mt-2">
+                      답변하기
+                    </Button>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
-      <div className="space-y-4">
-        {mockReviews.map((review, index) => (
+          <div className="space-y-4">
+            {reviews.map((review, index) => (
           <motion.div
             key={review.id}
             initial={{ opacity: 0, y: 20 }}
@@ -105,8 +136,10 @@ export default function ReviewsPage() {
               </CardContent>
             </Card>
           </motion.div>
-        ))}
-      </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   )
 }
