@@ -12,7 +12,7 @@ import { useSession } from 'next-auth/react'
  */
 export function useBookings(filters?: BookingsFilters) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['bookings', hospitalId, filters],
@@ -27,7 +27,7 @@ export function useBookings(filters?: BookingsFilters) {
  */
 export function useBooking(bookingId: string) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['booking', hospitalId, bookingId],
@@ -41,7 +41,7 @@ export function useBooking(bookingId: string) {
  */
 export function useCompleteBooking() {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
   const queryClient = useQueryClient()
 
   return useMutation({
@@ -60,7 +60,7 @@ export function useCompleteBooking() {
  */
 export function useCancelBooking() {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
   const queryClient = useQueryClient()
 
   return useMutation({

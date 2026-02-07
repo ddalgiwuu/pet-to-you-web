@@ -4,17 +4,18 @@
  */
 
 import { useQuery } from '@tanstack/react-query'
-import { dashboardApi } from '@/lib/api'
+import { dashboardApi, type DashboardResponse, type DashboardStats } from '@/lib/api'
 import { useSession } from 'next-auth/react'
+import type { Revenue } from '@/lib/types'
 
 /**
  * Get dashboard statistics
  */
 export function useDashboardStats() {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
-  return useQuery({
+  return useQuery<DashboardStats>({
     queryKey: ['dashboard', 'stats', hospitalId],
     queryFn: () => dashboardApi.getStats(hospitalId!),
     enabled: !!hospitalId,
@@ -28,9 +29,9 @@ export function useDashboardStats() {
  */
 export function useRevenueData(period?: string) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
-  return useQuery({
+  return useQuery<Revenue[]>({
     queryKey: ['dashboard', 'revenue', hospitalId, period],
     queryFn: () => dashboardApi.getRevenue(hospitalId!, period),
     enabled: !!hospitalId,
@@ -44,9 +45,9 @@ export function useRevenueData(period?: string) {
  */
 export function useDashboardData() {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
-  return useQuery({
+  return useQuery<DashboardResponse>({
     queryKey: ['dashboard', 'complete', hospitalId],
     queryFn: () => dashboardApi.getDashboard(hospitalId!),
     enabled: !!hospitalId,

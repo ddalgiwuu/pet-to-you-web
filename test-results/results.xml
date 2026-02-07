@@ -1,0 +1,2059 @@
+<testsuites id="" name="" tests="275" failures="34" skipped="0" errors="0" time="191.923155">
+<testsuite name="hospital-dashboard/01-loading.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="chromium" tests="6" failures="2" skipped="0" time="28.449" errors="0">
+<testcase name="Hospital Dashboard - Page Loading › homepage loads without errors" classname="hospital-dashboard/01-loading.spec.ts" time="11.043">
+<failure message="01-loading.spec.ts:4:7 homepage loads without errors" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/01-loading.spec.ts:4:7 › Hospital Dashboard - Page Loading › homepage loads without errors 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Hospital|Dashboard/i
+    Received string:  "Pet to You - 병원 관리자"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        9 × unexpected value "Pet to You - 병원 관리자"
+
+
+       8 |
+       9 |     // Check for critical elements
+    > 10 |     await expect(page).toHaveTitle(/Hospital|Dashboard/i);
+         |                        ^
+      11 |
+      12 |     // Verify no console errors
+      13 |     const errors: string[] = [];
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/01-loading.spec.ts:10:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads with network throttling (slow 3G)" classname="hospital-dashboard/01-loading.spec.ts" time="2.257">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard is responsive on mobile" classname="hospital-dashboard/01-loading.spec.ts" time="5.053">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads performance metrics under 3 seconds on fast connection" classname="hospital-dashboard/01-loading.spec.ts" time="5.66">
+<failure message="01-loading.spec.ts:52:7 dashboard loads performance metrics under 3 seconds on fast connection" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/01-loading.spec.ts:52:7 › Hospital Dashboard - Page Loading › dashboard loads performance metrics under 3 seconds on fast connection 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 3000
+    Received:   5324
+
+      61 |     const loadTime = Date.now() - startTime;
+      62 |
+    > 63 |     expect(loadTime).toBeLessThan(3000); // 3 seconds FCP target
+         |                      ^
+      64 |   });
+      65 |
+      66 |   test('no CSP (Content Security Policy) violations on load', async ({ page }) => {
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/01-loading.spec.ts:63:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-e5851--seconds-on-fast-connection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-e5851--seconds-on-fast-connection-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-01-load-e5851--seconds-on-fast-connection-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-01-load-e5851--seconds-on-fast-connection-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-e5851--seconds-on-fast-connection-chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-e5851--seconds-on-fast-connection-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › no CSP (Content Security Policy) violations on load" classname="hospital-dashboard/01-loading.spec.ts" time="2.939">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › verifies bundle size is optimized" classname="hospital-dashboard/01-loading.spec.ts" time="1.497">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/02-accessibility.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="chromium" tests="10" failures="3" skipped="0" time="42.285" errors="0">
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › keyboard navigation is fully functional" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.136">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.184">
+<failure message="02-accessibility.spec.ts:78:7 all interactive elements have aria labels" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/02-accessibility.spec.ts:78:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  ["<button class=\"relative p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transitio"]
+
+      33 |     });
+      34 |
+    > 35 |     expect(issues).toHaveLength(0);
+         |                    ^
+      36 |   };
+      37 |
+      38 |   const checkColorContrast = async (page: Page) => {
+        at checkAriaLabels (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:35:20)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:80:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.288">
+<failure message="02-accessibility.spec.ts:83:7 color contrast meets WCAG AA standards" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/02-accessibility.spec.ts:83:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  [{"element": "H1", "text": "Pet to You"}]
+
+      60 |
+      61 |     // Should have no contrast issues where text color matches background
+    > 62 |     expect(contrastIssues).toHaveLength(0);
+         |                            ^
+      63 |   };
+      64 |
+      65 |   test('keyboard navigation is fully functional', async ({ page }) => {
+        at checkColorContrast (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:62:28)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:85:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › focus management works correctly" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.422">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus)" classname="hospital-dashboard/02-accessibility.spec.ts" time="33.571">
+<failure message="02-accessibility.spec.ts:102:7 can navigate using Escape key (modals/menus)" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/02-accessibility.spec.ts:102:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('button').first()
+        - locator resolved to <button class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 w-full transition-colors">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="relative">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="space-y-2">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="space-y-2">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="space-y-2">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+      53 × retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <p class="text-3xl font-bold text-gray-900">0만원</p> from <div class="pl-64">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+
+
+      106 |     const buttons = await page.locator('button').count();
+      107 |     if (buttons > 0) {
+    > 108 |       await page.locator('button').first().click();
+          |                                            ^
+      109 |       await page.keyboard.press('Escape');
+      110 |     }
+      111 |
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:108:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › form inputs are properly labeled" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.618">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › headings are in logical order (h1 &gt; h2 &gt; h3...)" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.617">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › images have alt text" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.06">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › skip to main content link exists" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.804">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › page has proper lang attribute" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.585">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/03-performance.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="chromium" tests="8" failures="1" skipped="0" time="23.87" errors="0">
+<testcase name="Hospital Dashboard - Performance Metrics › Largest Contentful Paint (LCP) under 2.5s" classname="hospital-dashboard/03-performance.spec.ts" time="6.7">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › First Contentful Paint (FCP) under 1.8s" classname="hospital-dashboard/03-performance.spec.ts" time="0.498">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Cumulative Layout Shift (CLS) under 0.1" classname="hospital-dashboard/03-performance.spec.ts" time="4.43">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › bundle size analysis" classname="hospital-dashboard/03-performance.spec.ts" time="0.582">
+<failure message="03-performance.spec.ts:71:7 bundle size analysis" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/03-performance.spec.ts:71:7 › Hospital Dashboard - Performance Metrics › bundle size analysis 
+
+    TypeError: response.headersBuffer is not a function
+
+      76 |
+      77 |     page.on('response', (response) => {
+    > 78 |       const size = response.headersBuffer().length;
+         |                             ^
+      79 |       const url = response.url();
+      80 |
+      81 |       totalSize += size;
+        at Page.<anonymous> (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:78:29)
+
+    Error: page.goto: Test ended.
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "networkidle"
+
+
+      90 |     });
+      91 |
+    > 92 |     await page.goto('/', { waitUntil: 'networkidle' });
+         |                ^
+      93 |
+      94 |     expect(jsSize).toBeLessThan(200 * 1024); // 200KB JS
+      95 |     expect(cssSize).toBeLessThan(50 * 1024); // 50KB CSS
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:92:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › memory usage is stable" classname="hospital-dashboard/03-performance.spec.ts" time="4.18">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Core Web Vitals pass thresholds" classname="hospital-dashboard/03-performance.spec.ts" time="5.637">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › lighthouse performance score target" classname="hospital-dashboard/03-performance.spec.ts" time="0.879">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › no layout thrashing (multiple reflows)" classname="hospital-dashboard/03-performance.spec.ts" time="0.964">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/04-responsive.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="chromium" tests="20" failures="1" skipped="0" time="42.29" errors="0">
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Small (320x568)" classname="hospital-dashboard/04-responsive.spec.ts" time="2.86">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Small" classname="hospital-dashboard/04-responsive.spec.ts" time="2.293">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Standard (375x667)" classname="hospital-dashboard/04-responsive.spec.ts" time="2.87">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Standard" classname="hospital-dashboard/04-responsive.spec.ts" time="1.305">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Large (414x896)" classname="hospital-dashboard/04-responsive.spec.ts" time="2.18">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Large" classname="hospital-dashboard/04-responsive.spec.ts" time="1.5">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Tablet (768x1024)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.812">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Tablet" classname="hospital-dashboard/04-responsive.spec.ts" time="1.167">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop (1280x800)" classname="hospital-dashboard/04-responsive.spec.ts" time="2.7">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop" classname="hospital-dashboard/04-responsive.spec.ts" time="2.143">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop XL (1920x1080)" classname="hospital-dashboard/04-responsive.spec.ts" time="2.902">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop XL" classname="hospital-dashboard/04-responsive.spec.ts" time="1.43">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › mobile menu is accessible" classname="hospital-dashboard/04-responsive.spec.ts" time="1.338">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.888">
+<failure message="04-responsive.spec.ts:54:7 touch targets are large enough (min 44x44px)" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/04-responsive.spec.ts:54:7 › Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px) 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 44
+    Received:    30
+
+      63 |         // Touch targets should be at least 44x44 according to WCAG
+      64 |         expect(box.width).toBeGreaterThanOrEqual(44);
+    > 65 |         expect(box.height).toBeGreaterThanOrEqual(44);
+         |                            ^
+      66 |       }
+      67 |     }
+      68 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/04-responsive.spec.ts:65:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › images scale appropriately" classname="hospital-dashboard/04-responsive.spec.ts" time="2.746">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › no horizontal scroll on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="1.695">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › flex and grid layouts work on all viewport sizes" classname="hospital-dashboard/04-responsive.spec.ts" time="5.59">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › media queries work correctly" classname="hospital-dashboard/04-responsive.spec.ts" time="0.319">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › navigation adapts to viewport size" classname="hospital-dashboard/04-responsive.spec.ts" time="2.185">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › forms are usable on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="1.367">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/05-cross-browser.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="chromium" tests="11" failures="1" skipped="0" time="19.282" errors="0">
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.748">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › navigation works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.24">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › forms submit correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.739">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.436">
+<failure message="05-cross-browser.spec.ts:48:7 CSS features work consistently across browsers" type="FAILURE">
+<![CDATA[  [chromium] › hospital-dashboard/05-cross-browser.spec.ts:48:7 › Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      66 |
+      67 |     // All modern browsers should support these features
+    > 68 |     expect(hasCSSFeatures.flex).toBeTruthy();
+         |                                 ^
+      69 |     expect(hasCSSFeatures.grid).toBeTruthy();
+      70 |     expect(hasCSSFeatures.transform).toBeTruthy();
+      71 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:68:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-chromium/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › JavaScript features work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.322">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › localStorage works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="2.923">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › event listeners work correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.571">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › animations work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.376">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › font loading works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.079">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › media queries work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="2.967">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › content is visible and readable" classname="hospital-dashboard/05-cross-browser.spec.ts" time="2.881">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/01-loading.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="firefox" tests="6" failures="1" skipped="0" time="21.941" errors="0">
+<testcase name="Hospital Dashboard - Page Loading › homepage loads without errors" classname="hospital-dashboard/01-loading.spec.ts" time="8.801">
+<failure message="01-loading.spec.ts:4:7 homepage loads without errors" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/01-loading.spec.ts:4:7 › Hospital Dashboard - Page Loading › homepage loads without errors 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Hospital|Dashboard/i
+    Received string:  "Pet to You - 병원 관리자"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        9 × unexpected value "Pet to You - 병원 관리자"
+
+
+       8 |
+       9 |     // Check for critical elements
+    > 10 |     await expect(page).toHaveTitle(/Hospital|Dashboard/i);
+         |                        ^
+      11 |
+      12 |     // Verify no console errors
+      13 |     const errors: string[] = [];
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/01-loading.spec.ts:10:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads with network throttling (slow 3G)" classname="hospital-dashboard/01-loading.spec.ts" time="2.554">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard is responsive on mobile" classname="hospital-dashboard/01-loading.spec.ts" time="2.502">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads performance metrics under 3 seconds on fast connection" classname="hospital-dashboard/01-loading.spec.ts" time="4.076">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › no CSP (Content Security Policy) violations on load" classname="hospital-dashboard/01-loading.spec.ts" time="1.777">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › verifies bundle size is optimized" classname="hospital-dashboard/01-loading.spec.ts" time="2.231">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/02-accessibility.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="firefox" tests="10" failures="3" skipped="0" time="45.105" errors="0">
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › keyboard navigation is fully functional" classname="hospital-dashboard/02-accessibility.spec.ts" time="2.009">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.681">
+<failure message="02-accessibility.spec.ts:78:7 all interactive elements have aria labels" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/02-accessibility.spec.ts:78:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  ["<button class=\"relative p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transitio"]
+
+      33 |     });
+      34 |
+    > 35 |     expect(issues).toHaveLength(0);
+         |                    ^
+      36 |   };
+      37 |
+      38 |   const checkColorContrast = async (page: Page) => {
+        at checkAriaLabels (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:35:20)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:80:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.496">
+<failure message="02-accessibility.spec.ts:83:7 color contrast meets WCAG AA standards" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/02-accessibility.spec.ts:83:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  [{"element": "H1", "text": "Pet to You"}]
+
+      60 |
+      61 |     // Should have no contrast issues where text color matches background
+    > 62 |     expect(contrastIssues).toHaveLength(0);
+         |                            ^
+      63 |   };
+      64 |
+      65 |   test('keyboard navigation is fully functional', async ({ page }) => {
+        at checkColorContrast (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:62:28)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:85:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › focus management works correctly" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.502">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus)" classname="hospital-dashboard/02-accessibility.spec.ts" time="30.226">
+<failure message="02-accessibility.spec.ts:102:7 can navigate using Escape key (modals/menus)" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/02-accessibility.spec.ts:102:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('button').first()
+        - locator resolved to <button class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 w-full transition-colors">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="relative">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <p class="text-3xl font-bold text-gray-900">0만원</p> from <div class="pl-64">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <p class="text-3xl font-bold text-gray-900">0만원</p> from <div class="pl-64">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        50 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <p class="text-3xl font-bold text-gray-900">0만원</p> from <div class="pl-64">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+
+
+      106 |     const buttons = await page.locator('button').count();
+      107 |     if (buttons > 0) {
+    > 108 |       await page.locator('button').first().click();
+          |                                            ^
+      109 |       await page.keyboard.press('Escape');
+      110 |     }
+      111 |
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:108:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › form inputs are properly labeled" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.008">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › headings are in logical order (h1 &gt; h2 &gt; h3...)" classname="hospital-dashboard/02-accessibility.spec.ts" time="2.901">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › images have alt text" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.007">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › skip to main content link exists" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.241">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › page has proper lang attribute" classname="hospital-dashboard/02-accessibility.spec.ts" time="2.034">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/03-performance.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="firefox" tests="8" failures="1" skipped="0" time="23.022" errors="0">
+<testcase name="Hospital Dashboard - Performance Metrics › Largest Contentful Paint (LCP) under 2.5s" classname="hospital-dashboard/03-performance.spec.ts" time="7.247">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › First Contentful Paint (FCP) under 1.8s" classname="hospital-dashboard/03-performance.spec.ts" time="1.241">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Cumulative Layout Shift (CLS) under 0.1" classname="hospital-dashboard/03-performance.spec.ts" time="4.578">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › bundle size analysis" classname="hospital-dashboard/03-performance.spec.ts" time="0.872">
+<failure message="03-performance.spec.ts:71:7 bundle size analysis" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/03-performance.spec.ts:71:7 › Hospital Dashboard - Performance Metrics › bundle size analysis 
+
+    TypeError: response.headersBuffer is not a function
+
+      76 |
+      77 |     page.on('response', (response) => {
+    > 78 |       const size = response.headersBuffer().length;
+         |                             ^
+      79 |       const url = response.url();
+      80 |
+      81 |       totalSize += size;
+        at Page.<anonymous> (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:78:29)
+
+    Error: page.goto: Test ended.
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "networkidle"
+
+
+      90 |     });
+      91 |
+    > 92 |     await page.goto('/', { waitUntil: 'networkidle' });
+         |                ^
+      93 |
+      94 |     expect(jsSize).toBeLessThan(200 * 1024); // 200KB JS
+      95 |     expect(cssSize).toBeLessThan(50 * 1024); // 50KB CSS
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:92:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › memory usage is stable" classname="hospital-dashboard/03-performance.spec.ts" time="3.154">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Core Web Vitals pass thresholds" classname="hospital-dashboard/03-performance.spec.ts" time="4.087">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › lighthouse performance score target" classname="hospital-dashboard/03-performance.spec.ts" time="0.965">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › no layout thrashing (multiple reflows)" classname="hospital-dashboard/03-performance.spec.ts" time="0.878">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/04-responsive.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="firefox" tests="20" failures="1" skipped="0" time="36.415" errors="0">
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Small (320x568)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.917">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Small" classname="hospital-dashboard/04-responsive.spec.ts" time="1.349">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Standard (375x667)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.745">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Standard" classname="hospital-dashboard/04-responsive.spec.ts" time="1.496">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Large (414x896)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.781">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Large" classname="hospital-dashboard/04-responsive.spec.ts" time="1.764">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Tablet (768x1024)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.79">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Tablet" classname="hospital-dashboard/04-responsive.spec.ts" time="1.784">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop (1280x800)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.784">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop" classname="hospital-dashboard/04-responsive.spec.ts" time="1.29">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop XL (1920x1080)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.993">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop XL" classname="hospital-dashboard/04-responsive.spec.ts" time="1.442">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › mobile menu is accessible" classname="hospital-dashboard/04-responsive.spec.ts" time="1.248">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.905">
+<failure message="04-responsive.spec.ts:54:7 touch targets are large enough (min 44x44px)" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/04-responsive.spec.ts:54:7 › Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px) 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 44
+    Received:    30
+
+      63 |         // Touch targets should be at least 44x44 according to WCAG
+      64 |         expect(box.width).toBeGreaterThanOrEqual(44);
+    > 65 |         expect(box.height).toBeGreaterThanOrEqual(44);
+         |                            ^
+      66 |       }
+      67 |     }
+      68 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/04-responsive.spec.ts:65:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › images scale appropriately" classname="hospital-dashboard/04-responsive.spec.ts" time="2.222">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › no horizontal scroll on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="1.523">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › flex and grid layouts work on all viewport sizes" classname="hospital-dashboard/04-responsive.spec.ts" time="4.215">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › media queries work correctly" classname="hospital-dashboard/04-responsive.spec.ts" time="0.473">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › navigation adapts to viewport size" classname="hospital-dashboard/04-responsive.spec.ts" time="3.284">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › forms are usable on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="1.41">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/05-cross-browser.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="firefox" tests="11" failures="1" skipped="0" time="16.964" errors="0">
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.721">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › navigation works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.702">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › forms submit correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.636">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.726">
+<failure message="05-cross-browser.spec.ts:48:7 CSS features work consistently across browsers" type="FAILURE">
+<![CDATA[  [firefox] › hospital-dashboard/05-cross-browser.spec.ts:48:7 › Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      66 |
+      67 |     // All modern browsers should support these features
+    > 68 |     expect(hasCSSFeatures.flex).toBeTruthy();
+         |                                 ^
+      69 |     expect(hasCSSFeatures.grid).toBeTruthy();
+      70 |     expect(hasCSSFeatures.transform).toBeTruthy();
+      71 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:68:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-firefox/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › JavaScript features work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.738">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › localStorage works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.614">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › event listeners work correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.134">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › animations work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.178">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › font loading works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.839">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › media queries work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.336">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › content is visible and readable" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.34">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/01-loading.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="webkit" tests="6" failures="1" skipped="0" time="18.949" errors="0">
+<testcase name="Hospital Dashboard - Page Loading › homepage loads without errors" classname="hospital-dashboard/01-loading.spec.ts" time="8.224">
+<failure message="01-loading.spec.ts:4:7 homepage loads without errors" type="FAILURE">
+<![CDATA[  [webkit] › hospital-dashboard/01-loading.spec.ts:4:7 › Hospital Dashboard - Page Loading › homepage loads without errors 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Hospital|Dashboard/i
+    Received string:  "Pet to You - 병원 관리자"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        9 × unexpected value "Pet to You - 병원 관리자"
+
+
+       8 |
+       9 |     // Check for critical elements
+    > 10 |     await expect(page).toHaveTitle(/Hospital|Dashboard/i);
+         |                        ^
+      11 |
+      12 |     // Verify no console errors
+      13 |     const errors: string[] = [];
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/01-loading.spec.ts:10:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-webkit/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads with network throttling (slow 3G)" classname="hospital-dashboard/01-loading.spec.ts" time="2.635">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard is responsive on mobile" classname="hospital-dashboard/01-loading.spec.ts" time="2.582">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads performance metrics under 3 seconds on fast connection" classname="hospital-dashboard/01-loading.spec.ts" time="3.08">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › no CSP (Content Security Policy) violations on load" classname="hospital-dashboard/01-loading.spec.ts" time="0.99">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › verifies bundle size is optimized" classname="hospital-dashboard/01-loading.spec.ts" time="1.438">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/02-accessibility.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="webkit" tests="10" failures="1" skipped="0" time="7.982" errors="0">
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › keyboard navigation is fully functional" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.891">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.968">
+<failure message="02-accessibility.spec.ts:78:7 all interactive elements have aria labels" type="FAILURE">
+<![CDATA[  [webkit] › hospital-dashboard/02-accessibility.spec.ts:78:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  ["<button class=\"relative p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transitio"]
+
+      33 |     });
+      34 |
+    > 35 |     expect(issues).toHaveLength(0);
+         |                    ^
+      36 |   };
+      37 |
+      38 |   const checkColorContrast = async (page: Page) => {
+        at checkAriaLabels (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:35:20)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:80:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-webkit/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.749">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › focus management works correctly" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.634">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus)" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.801">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › form inputs are properly labeled" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.728">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › headings are in logical order (h1 &gt; h2 &gt; h3...)" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.001">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › images have alt text" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.692">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › skip to main content link exists" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.735">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › page has proper lang attribute" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.783">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/03-performance.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="webkit" tests="8" failures="1" skipped="0" time="18.828" errors="0">
+<testcase name="Hospital Dashboard - Performance Metrics › Largest Contentful Paint (LCP) under 2.5s" classname="hospital-dashboard/03-performance.spec.ts" time="6.428">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › First Contentful Paint (FCP) under 1.8s" classname="hospital-dashboard/03-performance.spec.ts" time="0.558">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Cumulative Layout Shift (CLS) under 0.1" classname="hospital-dashboard/03-performance.spec.ts" time="4.18">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › bundle size analysis" classname="hospital-dashboard/03-performance.spec.ts" time="0.334">
+<failure message="03-performance.spec.ts:71:7 bundle size analysis" type="FAILURE">
+<![CDATA[  [webkit] › hospital-dashboard/03-performance.spec.ts:71:7 › Hospital Dashboard - Performance Metrics › bundle size analysis 
+
+    TypeError: response.headersBuffer is not a function
+
+      76 |
+      77 |     page.on('response', (response) => {
+    > 78 |       const size = response.headersBuffer().length;
+         |                             ^
+      79 |       const url = response.url();
+      80 |
+      81 |       totalSize += size;
+        at Page.<anonymous> (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:78:29)
+
+    Error: page.goto: Test ended.
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "networkidle"
+
+
+      90 |     });
+      91 |
+    > 92 |     await page.goto('/', { waitUntil: 'networkidle' });
+         |                ^
+      93 |
+      94 |     expect(jsSize).toBeLessThan(200 * 1024); // 200KB JS
+      95 |     expect(cssSize).toBeLessThan(50 * 1024); // 50KB CSS
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:92:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-webkit/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › memory usage is stable" classname="hospital-dashboard/03-performance.spec.ts" time="2.112">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Core Web Vitals pass thresholds" classname="hospital-dashboard/03-performance.spec.ts" time="3.974">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › lighthouse performance score target" classname="hospital-dashboard/03-performance.spec.ts" time="0.66">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › no layout thrashing (multiple reflows)" classname="hospital-dashboard/03-performance.spec.ts" time="0.582">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/04-responsive.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="webkit" tests="20" failures="1" skipped="0" time="21.662" errors="0">
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Small (320x568)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.081">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Small" classname="hospital-dashboard/04-responsive.spec.ts" time="0.526">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Standard (375x667)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.184">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Standard" classname="hospital-dashboard/04-responsive.spec.ts" time="0.585">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Large (414x896)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.252">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Large" classname="hospital-dashboard/04-responsive.spec.ts" time="0.797">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Tablet (768x1024)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.285">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Tablet" classname="hospital-dashboard/04-responsive.spec.ts" time="0.687">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop (1280x800)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.499">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop" classname="hospital-dashboard/04-responsive.spec.ts" time="0.883">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop XL (1920x1080)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.45">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop XL" classname="hospital-dashboard/04-responsive.spec.ts" time="0.654">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › mobile menu is accessible" classname="hospital-dashboard/04-responsive.spec.ts" time="0.847">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px)" classname="hospital-dashboard/04-responsive.spec.ts" time="0.949">
+<failure message="04-responsive.spec.ts:54:7 touch targets are large enough (min 44x44px)" type="FAILURE">
+<![CDATA[  [webkit] › hospital-dashboard/04-responsive.spec.ts:54:7 › Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px) 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 44
+    Received:    31
+
+      63 |         // Touch targets should be at least 44x44 according to WCAG
+      64 |         expect(box.width).toBeGreaterThanOrEqual(44);
+    > 65 |         expect(box.height).toBeGreaterThanOrEqual(44);
+         |                            ^
+      66 |       }
+      67 |     }
+      68 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/04-responsive.spec.ts:65:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--webkit/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--webkit/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › images scale appropriately" classname="hospital-dashboard/04-responsive.spec.ts" time="1.257">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › no horizontal scroll on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="0.743">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › flex and grid layouts work on all viewport sizes" classname="hospital-dashboard/04-responsive.spec.ts" time="3.167">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › media queries work correctly" classname="hospital-dashboard/04-responsive.spec.ts" time="0.293">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › navigation adapts to viewport size" classname="hospital-dashboard/04-responsive.spec.ts" time="1.758">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › forms are usable on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="0.765">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/05-cross-browser.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="webkit" tests="11" failures="2" skipped="0" time="10.357" errors="0">
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.314">
+<failure message="05-cross-browser.spec.ts:4:7 page loads without console errors" type="FAILURE">
+<![CDATA[  [webkit] › hospital-dashboard/05-cross-browser.spec.ts:4:7 › Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 38
+    Received array:  ["[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", …]
+
+      14 |     await page.waitForLoadState('networkidle');
+      15 |
+    > 16 |     expect(errors).toHaveLength(0);
+         |                    ^
+      17 |   });
+      18 |
+      19 |   test('navigation works in all browsers', async ({ page, browserName }) => {
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:16:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-4bedc-oads-without-console-errors-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-4bedc-oads-without-console-errors-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-4bedc-oads-without-console-errors-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-4bedc-oads-without-console-errors-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-4bedc-oads-without-console-errors-webkit/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-4bedc-oads-without-console-errors-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › navigation works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.891">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › forms submit correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.72">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.217">
+<failure message="05-cross-browser.spec.ts:48:7 CSS features work consistently across browsers" type="FAILURE">
+<![CDATA[  [webkit] › hospital-dashboard/05-cross-browser.spec.ts:48:7 › Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      66 |
+      67 |     // All modern browsers should support these features
+    > 68 |     expect(hasCSSFeatures.flex).toBeTruthy();
+         |                                 ^
+      69 |     expect(hasCSSFeatures.grid).toBeTruthy();
+      70 |     expect(hasCSSFeatures.transform).toBeTruthy();
+      71 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:68:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-webkit/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › JavaScript features work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.998">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › localStorage works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.898">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › event listeners work correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.995">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › animations work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.872">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › font loading works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.851">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › media queries work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.807">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › content is visible and readable" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.794">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/01-loading.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Chrome" tests="6" failures="1" skipped="0" time="18.705" errors="0">
+<testcase name="Hospital Dashboard - Page Loading › homepage loads without errors" classname="hospital-dashboard/01-loading.spec.ts" time="8.462">
+<failure message="01-loading.spec.ts:4:7 homepage loads without errors" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/01-loading.spec.ts:4:7 › Hospital Dashboard - Page Loading › homepage loads without errors 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Hospital|Dashboard/i
+    Received string:  "Pet to You - 병원 관리자"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        9 × unexpected value "Pet to You - 병원 관리자"
+
+
+       8 |
+       9 |     // Check for critical elements
+    > 10 |     await expect(page).toHaveTitle(/Hospital|Dashboard/i);
+         |                        ^
+      11 |
+      12 |     // Verify no console errors
+      13 |     const errors: string[] = [];
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/01-loading.spec.ts:10:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads with network throttling (slow 3G)" classname="hospital-dashboard/01-loading.spec.ts" time="0.813">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard is responsive on mobile" classname="hospital-dashboard/01-loading.spec.ts" time="2.569">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads performance metrics under 3 seconds on fast connection" classname="hospital-dashboard/01-loading.spec.ts" time="3.079">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › no CSP (Content Security Policy) violations on load" classname="hospital-dashboard/01-loading.spec.ts" time="2.186">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › verifies bundle size is optimized" classname="hospital-dashboard/01-loading.spec.ts" time="1.596">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/02-accessibility.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Chrome" tests="10" failures="3" skipped="0" time="41.988" errors="0">
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › keyboard navigation is fully functional" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.168">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.331">
+<failure message="02-accessibility.spec.ts:78:7 all interactive elements have aria labels" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/02-accessibility.spec.ts:78:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  ["<button class=\"relative p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transitio"]
+
+      33 |     });
+      34 |
+    > 35 |     expect(issues).toHaveLength(0);
+         |                    ^
+      36 |   };
+      37 |
+      38 |   const checkColorContrast = async (page: Page) => {
+        at checkAriaLabels (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:35:20)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:80:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.018">
+<failure message="02-accessibility.spec.ts:83:7 color contrast meets WCAG AA standards" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/02-accessibility.spec.ts:83:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  [{"element": "H1", "text": "Pet to You"}]
+
+      60 |
+      61 |     // Should have no contrast issues where text color matches background
+    > 62 |     expect(contrastIssues).toHaveLength(0);
+         |                            ^
+      63 |   };
+      64 |
+      65 |   test('keyboard navigation is fully functional', async ({ page }) => {
+        at checkColorContrast (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:62:28)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:85:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-1ebb3-ast-meets-WCAG-AA-standards-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › focus management works correctly" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.894">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus)" classname="hospital-dashboard/02-accessibility.spec.ts" time="32.417">
+<failure message="02-accessibility.spec.ts:102:7 can navigate using Escape key (modals/menus)" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/02-accessibility.spec.ts:102:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus) 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('button').first()
+        - locator resolved to <button class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 w-full transition-colors">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <div class="space-y-2">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - <div class="space-y-2">…</div> from <div class="pl-64">…</div> subtree intercepts pointer events
+      2 × retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <p class="text-3xl font-bold text-gray-900">0만원</p> from <div class="pl-64">…</div> subtree intercepts pointer events
+      54 × retrying click action
+           - waiting 500ms
+           - waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <p class="text-3xl font-bold text-gray-900">0만원</p> from <div class="pl-64">…</div> subtree intercepts pointer events
+      - retrying click action
+        - waiting 500ms
+
+
+      106 |     const buttons = await page.locator('button').count();
+      107 |     if (buttons > 0) {
+    > 108 |       await page.locator('button').first().click();
+          |                                            ^
+      109 |       await page.keyboard.press('Escape');
+      110 |     }
+      111 |
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:108:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-6296b-ng-Escape-key-modals-menus--Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › form inputs are properly labeled" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.579">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › headings are in logical order (h1 &gt; h2 &gt; h3...)" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.605">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › images have alt text" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.685">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › skip to main content link exists" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.723">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › page has proper lang attribute" classname="hospital-dashboard/02-accessibility.spec.ts" time="1.568">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/03-performance.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Chrome" tests="8" failures="1" skipped="0" time="17.667" errors="0">
+<testcase name="Hospital Dashboard - Performance Metrics › Largest Contentful Paint (LCP) under 2.5s" classname="hospital-dashboard/03-performance.spec.ts" time="6.594">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › First Contentful Paint (FCP) under 1.8s" classname="hospital-dashboard/03-performance.spec.ts" time="0.506">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Cumulative Layout Shift (CLS) under 0.1" classname="hospital-dashboard/03-performance.spec.ts" time="4.255">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › bundle size analysis" classname="hospital-dashboard/03-performance.spec.ts" time="0.328">
+<failure message="03-performance.spec.ts:71:7 bundle size analysis" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/03-performance.spec.ts:71:7 › Hospital Dashboard - Performance Metrics › bundle size analysis 
+
+    TypeError: response.headersBuffer is not a function
+
+      76 |
+      77 |     page.on('response', (response) => {
+    > 78 |       const size = response.headersBuffer().length;
+         |                             ^
+      79 |       const url = response.url();
+      80 |
+      81 |       totalSize += size;
+        at Page.<anonymous> (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:78:29)
+
+    Error: page.goto: Test ended.
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "networkidle"
+
+
+      90 |     });
+      91 |
+    > 92 |     await page.goto('/', { waitUntil: 'networkidle' });
+         |                ^
+      93 |
+      94 |     expect(jsSize).toBeLessThan(200 * 1024); // 200KB JS
+      95 |     expect(cssSize).toBeLessThan(50 * 1024); // 50KB CSS
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:92:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › memory usage is stable" classname="hospital-dashboard/03-performance.spec.ts" time="1.551">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Core Web Vitals pass thresholds" classname="hospital-dashboard/03-performance.spec.ts" time="3.422">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › lighthouse performance score target" classname="hospital-dashboard/03-performance.spec.ts" time="0.496">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › no layout thrashing (multiple reflows)" classname="hospital-dashboard/03-performance.spec.ts" time="0.515">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/04-responsive.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Chrome" tests="20" failures="1" skipped="0" time="29.469" errors="0">
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Small (320x568)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.017">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Small" classname="hospital-dashboard/04-responsive.spec.ts" time="0.493">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Standard (375x667)" classname="hospital-dashboard/04-responsive.spec.ts" time="1">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Standard" classname="hospital-dashboard/04-responsive.spec.ts" time="0.593">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Large (414x896)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.023">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Large" classname="hospital-dashboard/04-responsive.spec.ts" time="1.23">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Tablet (768x1024)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.999">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Tablet" classname="hospital-dashboard/04-responsive.spec.ts" time="0.615">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop (1280x800)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.756">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop" classname="hospital-dashboard/04-responsive.spec.ts" time="1.052">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop XL (1920x1080)" classname="hospital-dashboard/04-responsive.spec.ts" time="2.305">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop XL" classname="hospital-dashboard/04-responsive.spec.ts" time="2.138">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › mobile menu is accessible" classname="hospital-dashboard/04-responsive.spec.ts" time="1.463">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.255">
+<failure message="04-responsive.spec.ts:54:7 touch targets are large enough (min 44x44px)" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/04-responsive.spec.ts:54:7 › Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px) 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 44
+    Received:    30
+
+      63 |         // Touch targets should be at least 44x44 according to WCAG
+      64 |         expect(box.width).toBeGreaterThanOrEqual(44);
+    > 65 |         expect(box.height).toBeGreaterThanOrEqual(44);
+         |                            ^
+      66 |       }
+      67 |     }
+      68 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/04-responsive.spec.ts:65:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › images scale appropriately" classname="hospital-dashboard/04-responsive.spec.ts" time="1.944">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › no horizontal scroll on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="1.168">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › flex and grid layouts work on all viewport sizes" classname="hospital-dashboard/04-responsive.spec.ts" time="5.736">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › media queries work correctly" classname="hospital-dashboard/04-responsive.spec.ts" time="0.193">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › navigation adapts to viewport size" classname="hospital-dashboard/04-responsive.spec.ts" time="1.502">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › forms are usable on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="0.987">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/05-cross-browser.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Chrome" tests="11" failures="1" skipped="0" time="12.979" errors="0">
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.315">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › navigation works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.808">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › forms submit correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.717">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.777">
+<failure message="05-cross-browser.spec.ts:48:7 CSS features work consistently across browsers" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › hospital-dashboard/05-cross-browser.spec.ts:48:7 › Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      66 |
+      67 |     // All modern browsers should support these features
+    > 68 |     expect(hasCSSFeatures.flex).toBeTruthy();
+         |                                 ^
+      69 |     expect(hasCSSFeatures.grid).toBeTruthy();
+      70 |     expect(hasCSSFeatures.transform).toBeTruthy();
+      71 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:68:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › JavaScript features work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.965">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › localStorage works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.076">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › event listeners work correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.136">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › animations work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.246">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › font loading works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.73">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › media queries work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.032">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › content is visible and readable" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.177">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/01-loading.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Safari" tests="6" failures="1" skipped="0" time="13.954" errors="0">
+<testcase name="Hospital Dashboard - Page Loading › homepage loads without errors" classname="hospital-dashboard/01-loading.spec.ts" time="8.806">
+<failure message="01-loading.spec.ts:4:7 homepage loads without errors" type="FAILURE">
+<![CDATA[  [Mobile Safari] › hospital-dashboard/01-loading.spec.ts:4:7 › Hospital Dashboard - Page Loading › homepage loads without errors 
+
+    Error: expect(page).toHaveTitle(expected) failed
+
+    Expected pattern: /Hospital|Dashboard/i
+    Received string:  "Pet to You - 병원 관리자"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        9 × unexpected value "Pet to You - 병원 관리자"
+
+
+       8 |
+       9 |     // Check for critical elements
+    > 10 |     await expect(page).toHaveTitle(/Hospital|Dashboard/i);
+         |                        ^
+      11 |
+      12 |     // Verify no console errors
+      13 |     const errors: string[] = [];
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/01-loading.spec.ts:10:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-01-load-6dd0e-mepage-loads-without-errors-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads with network throttling (slow 3G)" classname="hospital-dashboard/01-loading.spec.ts" time="1.247">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard is responsive on mobile" classname="hospital-dashboard/01-loading.spec.ts" time="1.019">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › dashboard loads performance metrics under 3 seconds on fast connection" classname="hospital-dashboard/01-loading.spec.ts" time="1.296">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › no CSP (Content Security Policy) violations on load" classname="hospital-dashboard/01-loading.spec.ts" time="0.519">
+</testcase>
+<testcase name="Hospital Dashboard - Page Loading › verifies bundle size is optimized" classname="hospital-dashboard/01-loading.spec.ts" time="1.067">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/02-accessibility.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Safari" tests="10" failures="1" skipped="0" time="5.321" errors="0">
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › keyboard navigation is fully functional" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.521">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.529">
+<failure message="02-accessibility.spec.ts:78:7 all interactive elements have aria labels" type="FAILURE">
+<![CDATA[  [Mobile Safari] › hospital-dashboard/02-accessibility.spec.ts:78:7 › Hospital Dashboard - Accessibility (WCAG 2.1 AA) › all interactive elements have aria labels 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 1
+    Received array:  ["<button class=\"relative p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transitio"]
+
+      33 |     });
+      34 |
+    > 35 |     expect(issues).toHaveLength(0);
+         |                    ^
+      36 |   };
+      37 |
+      38 |   const checkColorContrast = async (page: Page) => {
+        at checkAriaLabels (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:35:20)
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/02-accessibility.spec.ts:80:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-02-acce-5f974-e-elements-have-aria-labels-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › color contrast meets WCAG AA standards" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.468">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › focus management works correctly" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.426">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › can navigate using Escape key (modals/menus)" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.815">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › form inputs are properly labeled" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.459">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › headings are in logical order (h1 &gt; h2 &gt; h3...)" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.514">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › images have alt text" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.564">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › skip to main content link exists" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.54">
+</testcase>
+<testcase name="Hospital Dashboard - Accessibility (WCAG 2.1 AA) › page has proper lang attribute" classname="hospital-dashboard/02-accessibility.spec.ts" time="0.485">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/03-performance.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Safari" tests="8" failures="1" skipped="0" time="18.057" errors="0">
+<testcase name="Hospital Dashboard - Performance Metrics › Largest Contentful Paint (LCP) under 2.5s" classname="hospital-dashboard/03-performance.spec.ts" time="6.187">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › First Contentful Paint (FCP) under 1.8s" classname="hospital-dashboard/03-performance.spec.ts" time="0.429">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Cumulative Layout Shift (CLS) under 0.1" classname="hospital-dashboard/03-performance.spec.ts" time="4.012">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › bundle size analysis" classname="hospital-dashboard/03-performance.spec.ts" time="0.611">
+<failure message="03-performance.spec.ts:71:7 bundle size analysis" type="FAILURE">
+<![CDATA[  [Mobile Safari] › hospital-dashboard/03-performance.spec.ts:71:7 › Hospital Dashboard - Performance Metrics › bundle size analysis 
+
+    TypeError: response.headersBuffer is not a function
+
+      76 |
+      77 |     page.on('response', (response) => {
+    > 78 |       const size = response.headersBuffer().length;
+         |                             ^
+      79 |       const url = response.url();
+      80 |
+      81 |       totalSize += size;
+        at Page.<anonymous> (/Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:78:29)
+
+    Error: page.goto: Test ended.
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "networkidle"
+
+
+      90 |     });
+      91 |
+    > 92 |     await page.goto('/', { waitUntil: 'networkidle' });
+         |                ^
+      93 |
+      94 |     expect(jsSize).toBeLessThan(200 * 1024); // 200KB JS
+      95 |     expect(cssSize).toBeLessThan(50 * 1024); // 50KB CSS
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/03-performance.spec.ts:92:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-03-perf-91faf-etrics-bundle-size-analysis-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › memory usage is stable" classname="hospital-dashboard/03-performance.spec.ts" time="1.637">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › Core Web Vitals pass thresholds" classname="hospital-dashboard/03-performance.spec.ts" time="3.573">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › lighthouse performance score target" classname="hospital-dashboard/03-performance.spec.ts" time="0.912">
+</testcase>
+<testcase name="Hospital Dashboard - Performance Metrics › no layout thrashing (multiple reflows)" classname="hospital-dashboard/03-performance.spec.ts" time="0.696">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/04-responsive.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Safari" tests="20" failures="1" skipped="0" time="21.624" errors="0">
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Small (320x568)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.25">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Small" classname="hospital-dashboard/04-responsive.spec.ts" time="0.633">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Standard (375x667)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.063">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Standard" classname="hospital-dashboard/04-responsive.spec.ts" time="0.492">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Mobile Large (414x896)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.235">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Mobile Large" classname="hospital-dashboard/04-responsive.spec.ts" time="0.679">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Tablet (768x1024)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.184">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Tablet" classname="hospital-dashboard/04-responsive.spec.ts" time="0.603">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop (1280x800)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.129">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop" classname="hospital-dashboard/04-responsive.spec.ts" time="0.859">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › renders correctly on Desktop XL (1920x1080)" classname="hospital-dashboard/04-responsive.spec.ts" time="1.447">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › text is readable on Desktop XL" classname="hospital-dashboard/04-responsive.spec.ts" time="0.922">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › mobile menu is accessible" classname="hospital-dashboard/04-responsive.spec.ts" time="0.77">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px)" classname="hospital-dashboard/04-responsive.spec.ts" time="0.842">
+<failure message="04-responsive.spec.ts:54:7 touch targets are large enough (min 44x44px)" type="FAILURE">
+<![CDATA[  [Mobile Safari] › hospital-dashboard/04-responsive.spec.ts:54:7 › Hospital Dashboard - Responsive Design › touch targets are large enough (min 44x44px) 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 44
+    Received:    31
+
+      63 |         // Touch targets should be at least 44x44 according to WCAG
+      64 |         expect(box.width).toBeGreaterThanOrEqual(44);
+    > 65 |         expect(box.height).toBeGreaterThanOrEqual(44);
+         |                            ^
+      66 |       }
+      67 |     }
+      68 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/04-responsive.spec.ts:65:28
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-04-resp-2eeb9-e-large-enough-min-44x44px--Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › images scale appropriately" classname="hospital-dashboard/04-responsive.spec.ts" time="1.36">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › no horizontal scroll on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="0.774">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › flex and grid layouts work on all viewport sizes" classname="hospital-dashboard/04-responsive.spec.ts" time="3.513">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › media queries work correctly" classname="hospital-dashboard/04-responsive.spec.ts" time="0.582">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › navigation adapts to viewport size" classname="hospital-dashboard/04-responsive.spec.ts" time="1.375">
+</testcase>
+<testcase name="Hospital Dashboard - Responsive Design › forms are usable on mobile" classname="hospital-dashboard/04-responsive.spec.ts" time="0.912">
+</testcase>
+</testsuite>
+<testsuite name="hospital-dashboard/05-cross-browser.spec.ts" timestamp="2026-02-07T16:10:43.816Z" hostname="Mobile Safari" tests="11" failures="2" skipped="0" time="9.412" errors="0">
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.467">
+<failure message="05-cross-browser.spec.ts:4:7 page loads without console errors" type="FAILURE">
+<![CDATA[  [Mobile Safari] › hospital-dashboard/05-cross-browser.spec.ts:4:7 › Hospital Dashboard - Cross-Browser Compatibility › page loads without console errors 
+
+    Error: expect(received).toHaveLength(expected)
+
+    Expected length: 0
+    Received length: 38
+    Received array:  ["[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", "[webkit] Failed to load resource: A TLS error caused the secure connection to fail.", …]
+
+      14 |     await page.waitForLoadState('networkidle');
+      15 |
+    > 16 |     expect(errors).toHaveLength(0);
+         |                    ^
+      17 |   });
+      18 |
+      19 |   test('navigation works in all browsers', async ({ page, browserName }) => {
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:16:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-4bedc-oads-without-console-errors-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-4bedc-oads-without-console-errors-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-4bedc-oads-without-console-errors-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-4bedc-oads-without-console-errors-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-4bedc-oads-without-console-errors-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-4bedc-oads-without-console-errors-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › navigation works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.861">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › forms submit correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.735">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.777">
+<failure message="05-cross-browser.spec.ts:48:7 CSS features work consistently across browsers" type="FAILURE">
+<![CDATA[  [Mobile Safari] › hospital-dashboard/05-cross-browser.spec.ts:48:7 › Hospital Dashboard - Cross-Browser Compatibility › CSS features work consistently across browsers 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+      66 |
+      67 |     // All modern browsers should support these features
+    > 68 |     expect(hasCSSFeatures.flex).toBeTruthy();
+         |                                 ^
+      69 |     expect(hasCSSFeatures.grid).toBeTruthy();
+      70 |     expect(hasCSSFeatures.transform).toBeTruthy();
+      71 |   });
+        at /Users/ryansong/Desktop/DEV/Pet_to_You/pet-to-you-web/e2e/hospital-dashboard/05-cross-browser.spec.ts:68:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|hospital-dashboard-05-cros-e227d-onsistently-across-browsers-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › JavaScript features work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.742">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › localStorage works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="1.03">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › event listeners work correctly in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.757">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › animations work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.833">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › font loading works in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.655">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › media queries work in all browsers" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.814">
+</testcase>
+<testcase name="Hospital Dashboard - Cross-Browser Compatibility › content is visible and readable" classname="hospital-dashboard/05-cross-browser.spec.ts" time="0.741">
+</testcase>
+</testsuite>
+</testsuites>

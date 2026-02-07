@@ -1,6 +1,6 @@
 // RBAC Permissions Configuration
 
-import type { UserRole, Permission } from "@/types/auth";
+import { UserRole, type Permission } from "@/types/auth";
 
 export const ROLE_PERMISSIONS: Record<UserRole, Permission[]> = {
   // Hospital Admin - Full hospital access

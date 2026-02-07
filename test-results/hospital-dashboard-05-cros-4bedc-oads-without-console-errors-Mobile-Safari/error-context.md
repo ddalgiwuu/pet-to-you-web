@@ -1,0 +1,116 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - heading "Pet to You" [level=1] [ref=e5]
+    - navigation [ref=e6]:
+      - link "대시보드" [ref=e7]:
+        - /url: /
+        - generic [ref=e8]:
+          - img [ref=e9]
+          - text: 대시보드
+      - link "예약 관리" [ref=e14]:
+        - /url: /bookings
+        - generic [ref=e15]:
+          - img [ref=e16]
+          - text: 예약 관리
+      - link "환자 관리" [ref=e18]:
+        - /url: /patients
+        - generic [ref=e19]:
+          - img [ref=e20]
+          - text: 환자 관리
+      - link "진료 일정" [ref=e25]:
+        - /url: /schedule
+        - generic [ref=e26]:
+          - img [ref=e27]
+          - text: 진료 일정
+      - link "수익 분석" [ref=e30]:
+        - /url: /revenue
+        - generic [ref=e31]:
+          - img [ref=e32]
+          - text: 수익 분석
+      - link "리뷰 관리" [ref=e34]:
+        - /url: /reviews
+        - generic [ref=e35]:
+          - img [ref=e36]
+          - text: 리뷰 관리
+      - link "설정" [ref=e38]:
+        - /url: /settings
+        - generic [ref=e39]:
+          - img [ref=e40]
+          - text: 설정
+    - button "로그아웃" [ref=e44]:
+      - img [ref=e45]
+      - text: 로그아웃
+  - generic [ref=e48]:
+    - banner [ref=e49]:
+      - generic [ref=e51]:
+        - img [ref=e52]
+        - searchbox "환자, 예약, 진료 검색..." [ref=e55]
+      - generic [ref=e56]:
+        - button [ref=e57]:
+          - img [ref=e58]
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: 서울동물병원
+            - paragraph [ref=e64]: admin@hospital.com
+          - generic [ref=e65]: 서
+    - main [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - heading "대시보드" [level=1] [ref=e69]
+          - paragraph [ref=e70]: 오늘의 병원 현황을 확인하세요
+        - generic [ref=e71]:
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - text: 총 수익
+              - img [ref=e77]
+            - generic [ref=e79]:
+              - paragraph [ref=e80]: 0만원
+              - generic [ref=e81]:
+                - generic [ref=e82]: ↑ 0%
+                - text: 지난주 대비
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - text: 예약 수
+              - img [ref=e88]
+            - generic [ref=e90]:
+              - paragraph [ref=e91]: 0건
+              - generic [ref=e92]:
+                - generic [ref=e93]: ↑ 0%
+                - text: 지난주 대비
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - text: 환자 수
+              - img [ref=e99]
+            - generic [ref=e104]:
+              - paragraph [ref=e105]: 0명
+              - generic [ref=e106]:
+                - generic [ref=e107]: ↑ 0%
+                - text: 지난주 대비
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - text: 평균 평점
+              - img [ref=e113]
+            - generic [ref=e115]:
+              - paragraph [ref=e116]: "0.0"
+              - generic [ref=e117]:
+                - generic [ref=e118]: ↑ 0%
+                - text: 지난주 대비
+        - generic [ref=e119]:
+          - heading "주간 수익" [level=3] [ref=e122]
+          - paragraph [ref=e124]: 추가 차트 예정
+        - generic [ref=e125]:
+          - heading "오늘의 예약" [level=3] [ref=e127]
+          - table [ref=e130]:
+            - rowgroup [ref=e131]:
+              - row "보호자 반려동물 서비스 시간 금액 상태" [ref=e132]:
+                - columnheader "보호자" [ref=e133]
+                - columnheader "반려동물" [ref=e134]
+                - columnheader "서비스" [ref=e135]
+                - columnheader "시간" [ref=e136]
+                - columnheader "금액" [ref=e137]
+                - columnheader "상태" [ref=e138]
+            - rowgroup
+```

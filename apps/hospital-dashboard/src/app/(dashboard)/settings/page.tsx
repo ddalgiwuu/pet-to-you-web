@@ -11,7 +11,9 @@ import { useSession } from "next-auth/react"
 
 export default function SettingsPage() {
   const { data: session } = useSession()
-  const hospital = session?.user?.hospital
+  // Note: Hospital data should be fetched using organizationId
+  // For now, using placeholder data
+  const organizationId = session?.user?.organizationId
 
   return (
     <div className="space-y-6">
@@ -39,7 +41,7 @@ export default function SettingsPage() {
               <div>
                 <label className="text-sm font-medium text-gray-700">병원 이름</label>
                 <Input
-                  value={hospital?.name || "서울동물병원"}
+                  value="서울동물병원"
                   disabled
                   className="mt-1"
                 />
@@ -89,7 +91,7 @@ export default function SettingsPage() {
                   이메일
                 </label>
                 <Input
-                  value={hospital?.email || "admin@hospital.com"}
+                  value={session?.user?.email || "admin@hospital.com"}
                   disabled
                   className="mt-1"
                 />

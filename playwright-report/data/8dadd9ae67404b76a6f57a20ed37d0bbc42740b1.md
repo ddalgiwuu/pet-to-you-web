@@ -1,0 +1,119 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - heading "Pet to You" [level=1] [ref=e5]
+      - navigation [ref=e6]:
+        - link "대시보드" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]:
+            - img [ref=e9]
+            - generic [ref=e14]: 대시보드
+        - link "예약 관리" [ref=e15] [cursor=pointer]:
+          - /url: /bookings
+          - generic [ref=e16]:
+            - img [ref=e17]
+            - generic [ref=e22]: 예약 관리
+        - link "환자 관리" [ref=e23] [cursor=pointer]:
+          - /url: /patients
+          - generic [ref=e24]:
+            - img [ref=e25]
+            - generic [ref=e30]: 환자 관리
+        - link "진료 일정" [ref=e31] [cursor=pointer]:
+          - /url: /schedule
+          - generic [ref=e32]:
+            - img [ref=e33]
+            - generic [ref=e36]: 진료 일정
+        - link "수익 분석" [ref=e37] [cursor=pointer]:
+          - /url: /revenue
+          - generic [ref=e38]:
+            - img [ref=e39]
+            - generic [ref=e42]: 수익 분석
+        - link "리뷰 관리" [ref=e43] [cursor=pointer]:
+          - /url: /reviews
+          - generic [ref=e44]:
+            - img [ref=e45]
+            - generic [ref=e47]: 리뷰 관리
+        - link "설정" [ref=e48] [cursor=pointer]:
+          - /url: /settings
+          - generic [ref=e49]:
+            - img [ref=e50]
+            - generic [ref=e53]: 설정
+      - button "로그아웃" [ref=e55]:
+        - img [ref=e56]
+        - generic [ref=e60]: 로그아웃
+    - generic [ref=e61]:
+      - banner [ref=e62]:
+        - generic [ref=e64]:
+          - img [ref=e65]
+          - searchbox "환자, 예약, 진료 검색..." [ref=e68]
+        - generic [ref=e69]:
+          - button [ref=e70]:
+            - img [ref=e71]
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - paragraph [ref=e76]: 서울동물병원
+              - paragraph [ref=e77]: admin@hospital.com
+            - generic [ref=e78]: 서
+      - main [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - heading "대시보드" [level=1] [ref=e82]
+            - paragraph [ref=e83]: 오늘의 병원 현황을 확인하세요
+          - generic [ref=e84]:
+            - generic [ref=e87]:
+              - generic [ref=e88]:
+                - generic [ref=e89]: 총 수익
+                - img [ref=e91]
+              - generic [ref=e94]:
+                - paragraph [ref=e95]: 0만원
+                - generic [ref=e96]:
+                  - generic [ref=e97]: ↑ 0%
+                  - generic [ref=e98]: 지난주 대비
+            - generic [ref=e101]:
+              - generic [ref=e102]:
+                - generic [ref=e103]: 예약 수
+                - img [ref=e105]
+              - generic [ref=e110]:
+                - paragraph [ref=e111]: 0건
+                - generic [ref=e112]:
+                  - generic [ref=e113]: ↑ 0%
+                  - generic [ref=e114]: 지난주 대비
+            - generic [ref=e117]:
+              - generic [ref=e118]:
+                - generic [ref=e119]: 환자 수
+                - img [ref=e121]
+              - generic [ref=e126]:
+                - paragraph [ref=e127]: 0명
+                - generic [ref=e128]:
+                  - generic [ref=e129]: ↑ 0%
+                  - generic [ref=e130]: 지난주 대비
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - generic [ref=e135]: 평균 평점
+                - img [ref=e137]
+              - generic [ref=e139]:
+                - paragraph [ref=e140]: "0.0"
+                - generic [ref=e141]:
+                  - generic [ref=e142]: ↑ 0%
+                  - generic [ref=e143]: 지난주 대비
+          - generic [ref=e144]:
+            - heading "주간 수익" [level=3] [ref=e147]
+            - paragraph [ref=e152]: 추가 차트 예정
+          - generic [ref=e153]:
+            - heading "오늘의 예약" [level=3] [ref=e155]
+            - table [ref=e158]:
+              - rowgroup [ref=e159]:
+                - row "보호자 반려동물 서비스 시간 금액 상태" [ref=e160]:
+                  - columnheader "보호자" [ref=e161]
+                  - columnheader "반려동물" [ref=e162]
+                  - columnheader "서비스" [ref=e163]
+                  - columnheader "시간" [ref=e164]
+                  - columnheader "금액" [ref=e165]
+                  - columnheader "상태" [ref=e166]
+              - rowgroup
+  - button "Open Next.js Dev Tools" [ref=e172] [cursor=pointer]:
+    - img [ref=e173]
+```

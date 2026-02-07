@@ -12,7 +12,7 @@ import { useSession } from 'next-auth/react'
  */
 export function usePatients(filters?: PatientsFilters) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['patients', hospitalId, filters],
@@ -27,7 +27,7 @@ export function usePatients(filters?: PatientsFilters) {
  */
 export function usePatient(patientId: string) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['patient', hospitalId, patientId],
@@ -41,7 +41,7 @@ export function usePatient(patientId: string) {
  */
 export function usePatientSearch(query: string) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['patients', 'search', hospitalId, query],

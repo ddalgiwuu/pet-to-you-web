@@ -8,6 +8,7 @@ export interface DonutChartData {
   name: string
   value: number
   color?: string
+  [key: string]: string | number | undefined
 }
 
 export interface DonutChartProps {

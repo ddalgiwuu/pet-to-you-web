@@ -48,6 +48,16 @@ const TableRow = React.forwardRef<
   React.HTMLAttributes<HTMLTableRowElement> & { animate?: boolean }
 >(({ className, animate, ...props }, ref) => {
   if (animate) {
+    // Extract React DOM event handlers to avoid type conflicts with framer-motion
+    const {
+      onDrag,
+      onDragStart,
+      onDragEnd,
+      onAnimationStart,
+      onAnimationEnd,
+      ...motionSafeProps
+    } = props as any
+
     return (
       <motion.tr
         ref={ref}
@@ -59,7 +69,7 @@ const TableRow = React.forwardRef<
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.001 }}
         transition={{ duration: 0.15 }}
-        {...props}
+        {...motionSafeProps}
       />
     )
   }

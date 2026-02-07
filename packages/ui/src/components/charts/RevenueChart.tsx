@@ -54,7 +54,7 @@ export function RevenueChart({
                   borderRadius: '8px',
                   boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
                 }}
-                formatter={(value: number) => [formatValue(value), '수익']}
+                formatter={(value: number | undefined) => [formatValue(value || 0), '수익']}
               />
               <Area
                 type="monotone"

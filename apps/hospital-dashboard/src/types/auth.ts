@@ -103,14 +103,3 @@ declare module "next-auth" {
     permissions: Permission[];
   }
 }
-
-declare module "next-auth/jwt" {
-  interface JWT {
-    id: string;
-    role: UserRole;
-    organizationId: string;
-    organizationType: OrganizationType;
-    permissions: Permission[];
-    sessionId: string;
-  }
-}

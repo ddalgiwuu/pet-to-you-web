@@ -19,13 +19,23 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     )
 
     if (hover) {
+      // Extract any React DOM event handlers to avoid type conflicts with framer-motion
+      const {
+        onDrag,
+        onDragStart,
+        onDragEnd,
+        onAnimationStart,
+        onAnimationEnd,
+        ...motionSafeProps
+      } = props as any
+
       return (
         <motion.div
           ref={ref}
           className={cardClass}
           whileHover={{ y: -2 }}
           transition={{ duration: 0.2 }}
-          {...props}
+          {...motionSafeProps}
         >
           {children}
         </motion.div>

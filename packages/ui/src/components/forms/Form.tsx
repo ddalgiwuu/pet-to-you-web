@@ -3,10 +3,10 @@
 import * as React from "react"
 import { useForm, FieldValues, UseFormReturn, FormProvider } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import type { z } from "zod"
 
 export interface FormProps<T extends FieldValues> {
-  schema: z.ZodType<T>
+  schema: z.ZodType<T, any, any>
   onSubmit: (data: T) => void | Promise<void>
   defaultValues?: Partial<T>
   children: (methods: UseFormReturn<T>) => React.ReactNode
@@ -21,6 +21,7 @@ export function Form<T extends FieldValues>({
   className,
 }: FormProps<T>) {
   const methods = useForm<T>({
+    // @ts-ignore - Zod version compatibility issue
     resolver: zodResolver(schema),
     defaultValues: defaultValues as any,
   })

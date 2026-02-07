@@ -7,6 +7,7 @@ import { BookingTable } from "@/components/dashboard/BookingTable"
 import { DashboardSkeleton } from "@/components/dashboard/DashboardSkeleton"
 import { useDashboardData, useRevenueData } from "@/hooks/useDashboardData"
 import { useBookings } from "@/hooks/useBookings"
+import type { DashboardStats } from "@/lib/api"
 
 export default function DashboardPage() {
   // Fetch dashboard data
@@ -32,7 +33,16 @@ export default function DashboardPage() {
   }
 
   // Extract data with fallbacks
-  const stats = dashboardData?.stats || {}
+  const stats: DashboardStats = dashboardData?.stats || {
+    totalRevenue: 0,
+    revenueChange: 0,
+    totalBookings: 0,
+    bookingsChange: 0,
+    totalPatients: 0,
+    patientsChange: 0,
+    averageRating: 0,
+    ratingChange: 0,
+  }
   const revenue = revenueData || []
   const bookings = bookingsData?.bookings || []
   return (

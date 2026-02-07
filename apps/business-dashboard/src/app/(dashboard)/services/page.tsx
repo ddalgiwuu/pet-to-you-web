@@ -1,7 +1,7 @@
 "use client"
 
 import { Plus, Search, TrendingUp, Calendar } from "lucide-react"
-import { Button, ServiceCard } from "@pet-to-you/ui"
+import { Button } from "@pet-to-you/ui"
 import { useServices } from "@/hooks/useBusinessData"
 import { useState } from "react"
 

@@ -29,31 +29,25 @@ export default function CustomersPage() {
       ),
     },
     {
-      accessorKey: "pets",
-      header: "반려동물",
+      accessorKey: "totalVisits",
+      header: "방문 횟수",
       cell: ({ row }) => (
-        <div>
-          {row.original.pets.slice(0, 2).map((pet, i) => (
-            <p key={i} className="text-sm text-gray-700">
-              🐾 {pet.name} ({pet.breed})
-            </p>
-          ))}
-          {row.original.pets.length > 2 && (
-            <p className="text-xs text-gray-500">+{row.original.pets.length - 2}마리 더</p>
-          )}
-        </div>
+        <span className="text-sm text-gray-900">
+          {row.original.totalVisits}회
+        </span>
       ),
     },
     {
       accessorKey: "status",
       header: "상태",
       cell: ({ row }) => {
-        const statusMap = {
-          active: { bg: "bg-green-100", text: "text-green-700", label: "활동" },
-          inactive: { bg: "bg-gray-100", text: "text-gray-700", label: "휴면" },
+        const statusMap: Record<string, { bg: string; text: string; label: string }> = {
           new: { bg: "bg-blue-100", text: "text-blue-700", label: "신규" },
+          regular: { bg: "bg-green-100", text: "text-green-700", label: "단골" },
+          vip: { bg: "bg-purple-100", text: "text-purple-700", label: "VIP" },
+          dormant: { bg: "bg-gray-100", text: "text-gray-700", label: "휴면" },
         }
-        const status = statusMap[row.original.status]
+        const status = statusMap[row.original.status] || statusMap.new
         return (
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${status.bg} ${status.text}`}>
             {status.label}

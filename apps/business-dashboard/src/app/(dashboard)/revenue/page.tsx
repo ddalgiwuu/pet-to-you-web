@@ -106,7 +106,7 @@ export default function RevenuePage() {
         />
         <StatsCard
           title="성장률"
-          value={`${revenueData?.growthRate > 0 ? '+' : ''}${revenueData?.growthRate.toFixed(1)}%`}
+          value={`${(revenueData?.growthRate || 0) > 0 ? '+' : ''}${(revenueData?.growthRate || 0).toFixed(1)}%`}
           icon={TrendingUp}
           index={3}
         />
@@ -172,7 +172,7 @@ export default function RevenuePage() {
               <span className="text-lg font-bold text-gray-900">45명</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">휴면 고객 (>90일)</span>
+              <span className="text-sm text-gray-600">휴면 고객 (&gt;90일)</span>
               <span className="text-lg font-bold text-red-600">8명</span>
             </div>
             <div className="pt-4 border-t border-gray-200">

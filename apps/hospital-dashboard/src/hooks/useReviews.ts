@@ -12,7 +12,7 @@ import { useSession } from 'next-auth/react'
  */
 export function useReviews(filters?: ReviewsFilters) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['reviews', hospitalId, filters],
@@ -27,7 +27,7 @@ export function useReviews(filters?: ReviewsFilters) {
  */
 export function useReview(reviewId: string) {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
 
   return useQuery({
     queryKey: ['review', hospitalId, reviewId],
@@ -41,7 +41,7 @@ export function useReview(reviewId: string) {
  */
 export function useReplyToReview() {
   const { data: session } = useSession()
-  const hospitalId = session?.user?.hospitalId
+  const hospitalId = session?.user?.organizationId
   const queryClient = useQueryClient()
 
   return useMutation({

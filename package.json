@@ -11,9 +11,11 @@
     "clean": "pnpm --recursive exec rm -rf .next node_modules"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@types/node": "^22.10.5",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "axe-playwright": "^2.2.2",
     "typescript": "^5.9.3"
   },
   "engines": {

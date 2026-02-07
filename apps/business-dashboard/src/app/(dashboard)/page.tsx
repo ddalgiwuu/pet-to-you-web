@@ -76,7 +76,7 @@ export default function DashboardPage() {
         />
         <StatsCard
           title="평균 평점"
-          value={stats?.averageRating.toFixed(1)}
+          value={(stats?.averageRating || 0).toFixed(1)}
           change={stats?.ratingChange || 0}
           icon={Star}
           index={3}
