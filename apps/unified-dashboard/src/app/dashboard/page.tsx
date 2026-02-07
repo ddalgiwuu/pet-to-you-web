@@ -1,150 +1,157 @@
-'use client'
+"use client"
 
-import { useUserStore } from '@/lib/store'
-import { useDashboardData } from '@/hooks/useDashboardData'
-import { TrendingUp, TrendingDown, Calendar, DollarSign, Users, CheckCircle } from 'lucide-react'
+import { TrendingUp, TrendingDown, DollarSign, Calendar, Users, CheckCircle, Clock, Settings } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { useUserStore } from "@/lib/store"
 
 export default function DashboardPage() {
   const { user } = useUserStore()
-  const { data: stats, isLoading } = useDashboardData(user?.role!)
 
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-full">
-        <div className="text-gray-500">Loading dashboard...</div>
-      </div>
-    )
-  }
-
-  // Mock data for demo
-  const mockStats = {
-    totalRevenue: 125400,
-    totalBookings: 342,
-    activeCustomers: 156,
-    completionRate: 94,
-    revenueChange: 12.5,
-    bookingsChange: 8.3,
-    customersChange: 15.2,
-    rateChange: 2.1,
-  }
-
-  const displayStats = stats || mockStats
-
-  const statCards = [
+  // Mock stats data
+  const stats = [
     {
-      title: 'Total Revenue',
-      value: `$${displayStats.totalRevenue.toLocaleString()}`,
-      change: displayStats.revenueChange,
+      title: "Total Revenue",
+      value: "$125,400",
+      change: "+12.5%",
+      trend: "up" as const,
       icon: DollarSign,
-      color: 'from-green-400 to-emerald-500',
+      description: "from last month"
     },
     {
-      title: 'Total Bookings',
-      value: displayStats.totalBookings.toString(),
-      change: displayStats.bookingsChange,
+      title: "Total Bookings",
+      value: "342",
+      change: "+8.3%",
+      trend: "up" as const,
       icon: Calendar,
-      color: 'from-blue-400 to-cyan-500',
+      description: "from last month"
     },
     {
-      title: 'Active Customers',
-      value: displayStats.activeCustomers.toString(),
-      change: displayStats.customersChange,
+      title: "Active Customers",
+      value: "156",
+      change: "+15.2%",
+      trend: "up" as const,
       icon: Users,
-      color: 'from-purple-400 to-pink-500',
+      description: "from last month"
     },
     {
-      title: 'Completion Rate',
-      value: `${displayStats.completionRate}%`,
-      change: displayStats.rateChange,
+      title: "Completion Rate",
+      value: "94%",
+      change: "+2.1%",
+      trend: "up" as const,
       icon: CheckCircle,
-      color: 'from-orange-400 to-red-500',
+      description: "from last month"
     },
   ]
 
+  const recentActivities = [
+    { id: 1, title: "New booking confirmed", time: "2 hours ago", type: "booking" },
+    { id: 2, title: "Customer added review", time: "4 hours ago", type: "review" },
+    { id: 3, title: "Payment received", time: "5 hours ago", type: "payment" },
+    { id: 4, title: "Appointment rescheduled", time: "6 hours ago", type: "schedule" },
+  ]
+
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Welcome Header */}
-      <div className="glass-card rounded-xl p-6">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Welcome back, {user?.name}! 👋
-        </h1>
-        <p className="text-gray-600">
-          Here's what's happening with your business today.
+    <div className="space-y-8">
+      {/* Page Header */}
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+        <p className="text-muted-foreground mt-2">
+          Welcome back, {user?.name}! Here's what's happening today.
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {statCards.map((stat, index) => (
-          <div
-            key={stat.title}
-            className="glass-card rounded-xl p-6 animate-slide-up"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <div className="flex items-start justify-between mb-4">
-              <div
-                className={`w-12 h-12 rounded-lg bg-gradient-to-br ${stat.color} flex items-center justify-center`}
-              >
-                <stat.icon className="w-6 h-6 text-white" />
-              </div>
-              <div className="flex items-center gap-1">
-                {stat.change > 0 ? (
-                  <>
-                    <TrendingUp className="w-4 h-4 text-green-500" />
-                    <span className="text-sm text-green-500 font-medium">
-                      +{stat.change}%
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <TrendingDown className="w-4 h-4 text-red-500" />
-                    <span className="text-sm text-red-500 font-medium">
-                      {stat.change}%
-                    </span>
-                  </>
-                )}
-              </div>
-            </div>
-            <h3 className="text-gray-600 text-sm mb-1">{stat.title}</h3>
-            <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
-          </div>
-        ))}
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {stats.map((stat) => {
+          const Icon = stat.icon
+          const TrendIcon = stat.trend === "up" ? TrendingUp : TrendingDown
+
+          return (
+            <Card key={stat.title}>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">
+                  {stat.title}
+                </CardTitle>
+                <Icon className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{stat.value}</div>
+                <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                  <TrendIcon className={`h-3 w-3 ${stat.trend === "up" ? "text-green-600" : "text-red-600"}`} />
+                  <span className={stat.trend === "up" ? "text-green-600" : "text-red-600"}>
+                    {stat.change}
+                  </span>
+                  <span>{stat.description}</span>
+                </div>
+              </CardContent>
+            </Card>
+          )
+        })}
       </div>
 
-      {/* Recent Activity & Quick Actions */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         {/* Recent Activity */}
-        <div className="glass-card rounded-xl p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Recent Activity</h2>
-          <div className="space-y-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0">
-                  <Calendar className="w-5 h-5 text-white" />
+        <Card className="col-span-4">
+          <CardHeader>
+            <CardTitle>Recent Activity</CardTitle>
+            <CardDescription>
+              Latest updates from your dashboard
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {recentActivities.map((activity) => (
+                <div
+                  key={activity.id}
+                  className="flex items-center gap-4 pb-4 last:pb-0 border-b last:border-0"
+                >
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-muted">
+                    <Clock className="h-4 w-4 text-muted-foreground" />
+                  </div>
+                  <div className="flex-1 space-y-1">
+                    <p className="text-sm font-medium leading-none">
+                      {activity.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {activity.time}
+                    </p>
+                  </div>
+                  <Badge variant="secondary">New</Badge>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-gray-900">New booking confirmed</p>
-                  <p className="text-xs text-gray-500">2 hours ago</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Quick Actions */}
-        <div className="glass-card rounded-xl p-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
-          <div className="grid grid-cols-2 gap-4">
-            {['New Booking', 'Add Customer', 'View Reports', 'Settings'].map((action) => (
-              <button
-                key={action}
-                className="p-4 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 text-white font-medium hover:shadow-lg transition-shadow"
-              >
-                {action}
-              </button>
-            ))}
-          </div>
-        </div>
+        <Card className="col-span-3">
+          <CardHeader>
+            <CardTitle>Quick Actions</CardTitle>
+            <CardDescription>
+              Common tasks and shortcuts
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <Button className="w-full justify-start" variant="outline">
+              <Calendar className="mr-2 h-4 w-4" />
+              New Booking
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <Users className="mr-2 h-4 w-4" />
+              Add Customer
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <DollarSign className="mr-2 h-4 w-4" />
+              View Reports
+            </Button>
+            <Button className="w-full justify-start" variant="outline">
+              <Settings className="mr-2 h-4 w-4" />
+              Settings
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

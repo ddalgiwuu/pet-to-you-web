@@ -1,9 +1,8 @@
-'use client'
+"use client"
 
-import { useUserStore } from '@/lib/store'
-import { getMenuItemsForRole, getRoleName } from '@/lib/menu'
-import { Sidebar } from '@/components/Sidebar'
-import { Header } from '@/components/Header'
+import { useUserStore } from "@/lib/store"
+import { DashboardSidebar } from "@/components/DashboardSidebar"
+import { DashboardHeader } from "@/components/DashboardHeader"
 
 export default function DashboardLayout({
   children,
@@ -14,21 +13,29 @@ export default function DashboardLayout({
 
   if (!user) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-white text-xl">Loading...</div>
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="text-muted-foreground">Loading...</div>
       </div>
     )
   }
 
-  const menuItems = getMenuItemsForRole(user.role)
-  const roleName = getRoleName(user.role)
-
   return (
-    <div className="flex h-screen overflow-hidden">
-      <Sidebar menuItems={menuItems} user={user} roleName={roleName} />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header user={user} roleName={roleName} />
-        <main className="flex-1 overflow-y-auto p-6">{children}</main>
+    <div className="flex h-screen bg-background">
+      <DashboardSidebar
+        role={user.role}
+        userName={user.name}
+        userEmail={user.email}
+        userAvatar={user.avatar}
+      />
+      <div className="flex flex-1 flex-col overflow-hidden">
+        <DashboardHeader
+          userName={user.name}
+          userEmail={user.email}
+          userAvatar={user.avatar}
+        />
+        <main className="flex-1 overflow-y-auto p-6 bg-muted/10">
+          {children}
+        </main>
       </div>
     </div>
   )
