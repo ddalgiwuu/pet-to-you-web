@@ -53,6 +53,6 @@ export const authService = {
   },
 
   async changePassword(currentPassword: string, newPassword: string): Promise<void> {
-    await apiClient.patch('/auth/change-password', { currentPassword, newPassword });
+    await apiClient.post('/auth/change-password', { currentPassword, newPassword });
   },
 };
